@@ -17,4 +17,25 @@
         <property name="expectedStatus" category="input" default=""/>
         <property name="pollInterval" category="input" kind="integer" description="Time in seconds between each polling action" default="30" />
     </type>
+
+    <type type="jira.GetIssues" extends="xlrelease.PythonScript">
+        <property name="scriptLocation" default="jira/getIssues.py" category="input" hidden="true" />
+        <property name="jiraServer" category="input" label="Server" referenced-type="jira.Server" kind="ci"/>
+        <property name="username" category="input"/>
+        <property name="password" password="true" category="input"/>
+
+        <property name="projectKey" category="input" required="true"/>
+        <property name="version" category="input" required="true"/>
+    </type>
+
+    <type type="jira.CheckIssuesStatus" extends="xlrelease.PythonScript">
+        <property name="scriptLocation" default="jira/checkIssuesStatus.py" category="input" hidden="true" />
+        <property name="jiraServer" category="input" label="Server" referenced-type="jira.Server" kind="ci"/>
+        <property name="username" category="input"/>
+        <property name="password" password="true" category="input"/>
+
+        <property name="expectedStatus" category="input" default="Closed" hidden="true"/>
+        <property name="projectKey" category="input" required="true"/>
+        <property name="version" category="input" required="true"/>
+    </type>
 </synthetic>

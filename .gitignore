@@ -1,3 +1,5 @@
 .gradle
+.idea
 build
 *.swp
+xlr-jira-extensions-plugin.iml
